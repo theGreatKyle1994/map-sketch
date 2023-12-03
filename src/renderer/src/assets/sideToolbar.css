@@ -1,0 +1,6 @@
+#sideToolbar-container {
+  min-width: 175px;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+}

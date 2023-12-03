@@ -1,5 +1,5 @@
 {
-  "name": "Map Sketch",
+  "name": "map-sketch",
   "version": "0.0.1",
   "description": "A 2D map drawing application.",
   "main": "./out/main/index.js",
