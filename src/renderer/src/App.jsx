@@ -1,6 +1,6 @@
 import HeaderToolbar from "./components/HeaderToolbar";
 import Editor from "./components/Editor";
-import SideToolbar from "./components/SideToolbar";
+import SideToolbar from "./components/sideToolbar/SideToolbar";
 import { useState } from "react";
 import "./assets/app.css";
 
