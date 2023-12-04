@@ -1,5 +1,5 @@
 #sideToolbar-container {
-  min-width: 200px;
+  min-width: 275px;
   background-color: yellow;
   display: flex;
   flex-direction: column;

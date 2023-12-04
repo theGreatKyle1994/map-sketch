@@ -5,6 +5,7 @@ const EditorSizeForm = ({ editorOptions }) => {
   const [formData, setFormData] = useState({
     x: editorOptions.editorTiles[0].length,
     y: editorOptions.editorTiles.length,
+    size: 100,
   });
 
   const submitHandler = (e) => {
@@ -18,7 +19,7 @@ const EditorSizeForm = ({ editorOptions }) => {
         }
         outline.push(row);
       }
-      return outline;
+      return { tiles: outline, size: formData.size };
     });
   };
 
@@ -49,6 +50,17 @@ const EditorSizeForm = ({ editorOptions }) => {
           min={1}
           name="y"
           value={formData.y}
+          onChange={(e) => changeHandler(e)}
+        />
+      </div>
+      <div className="sideToolbar-editor-div">
+        <label htmlFor="editor-size">Size (px): </label>
+        <input
+          id="editor-size"
+          type="number"
+          min={10}
+          name="size"
+          value={formData.size}
           onChange={(e) => changeHandler(e)}
         />
       </div>

@@ -11,3 +11,7 @@
   align-items: center;
   margin: 5px 0;
 }
+
+.sideToolbar-editor-div input {
+  text-align: center;
+}

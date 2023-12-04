@@ -5,19 +5,22 @@ import { useState } from "react";
 import "./assets/app.css";
 
 const App = () => {
-  const [editorTiles, setEditorTiles] = useState([
-    [0, 0],
-    [0, 0],
-  ]);
+  const [editorTiles, setEditorTiles] = useState({
+    tiles: [
+      [0, 0],
+      [0, 0],
+    ],
+    size: 100,
+  });
 
   return (
     <div id="app-container">
       <HeaderToolbar />
       <div id="app-mid-container">
-        <Editor tiles={editorTiles} />
+        <Editor tiles={editorTiles.tiles} tileSize={editorTiles.size} />
         <SideToolbar
           editorOptions={{
-            editorTiles: editorTiles,
+            editorTiles: editorTiles.tiles,
             setEditorTiles: setEditorTiles,
           }}
         />
