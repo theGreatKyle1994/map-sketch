@@ -17,7 +17,11 @@ function mapTiles(tiles) {
 }
 
 const Editor = ({ tiles }) => {
-  return <div id="editor-container">{...mapTiles(tiles)}</div>;
+  return (
+    <div id="editor-container">
+      <div id="editor-tile-container">{...mapTiles(tiles)}</div>
+    </div>
+  );
 };
 
 export default Editor;

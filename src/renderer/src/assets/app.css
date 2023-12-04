@@ -6,5 +6,6 @@
 
 #app-mid-container {
   display: flex;
+  min-height: 0;
   height: 100%;
 }
