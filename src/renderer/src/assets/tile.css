@@ -1,0 +1,10 @@
+.tile {
+  height: 100px;
+  min-width: 100px;
+  background-color: lightgray;
+  border: 1px solid black;
+}
+
+.tile-row-container {
+  display: flex;
+}

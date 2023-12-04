@@ -1,7 +1,23 @@
+import Tile from "./Tile";
 import "../assets/editor.css";
 
-const Editor = () => {
-  return <div id="editor-container">Editor</div>;
+function mapTiles(tiles) {
+  const outline = [];
+  for (let i = 0; i < tiles.length; i++) {
+    const row = (
+      <div className="tile-row-container">
+        {tiles[i].map((_) => (
+          <Tile key={Math.random()} />
+        ))}
+      </div>
+    );
+    outline.push(row);
+  }
+  return outline;
+}
+
+const Editor = ({ tiles }) => {
+  return <div id="editor-container">{...mapTiles(tiles)}</div>;
 };
 
 export default Editor;

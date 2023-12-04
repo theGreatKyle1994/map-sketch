@@ -1,6 +1,20 @@
 #sideToolbar-container {
-  min-width: 175px;
+  min-width: 200px;
   background-color: yellow;
   display: flex;
   flex-direction: column;
+}
+
+#sideToolbar-editor-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+}
+
+.sideToolbar-editor-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
 }
