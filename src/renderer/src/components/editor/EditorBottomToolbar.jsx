@@ -27,7 +27,7 @@ const EditorBottomToolbar = () => {
           value={editorInfo.zoom}
           onChange={(e) => zoomChangeHandler(e)}
         />
-        <span>{(editorInfo.zoom / 100).toFixed(1)}</span>
+        <span>{(editorInfo.zoom / 100).toFixed(1)}x</span>
       </form>
     </div>
   );
