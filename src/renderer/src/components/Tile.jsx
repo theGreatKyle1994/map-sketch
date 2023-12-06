@@ -1,10 +1,15 @@
+import { globalContext } from "../App";
+import { useContext } from "react";
 import "../assets/tile.css";
 
-const Tile = ({ size }) => {
+const Tile = () => {
+  const { editorInfo } = useContext(globalContext);
+  const { zoom } = editorInfo;
+
   return (
     <div
       className="tile"
-      style={{ height: `${size}px`, minWidth: `${size}px` }}
+      style={{ height: `${zoom}px`, minWidth: `${zoom}px` }}
     ></div>
   );
 };

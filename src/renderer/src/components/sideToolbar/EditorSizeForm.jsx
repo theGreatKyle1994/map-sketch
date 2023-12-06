@@ -1,16 +1,19 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { globalContext } from "../../App";
 import "../../assets/sideToolbar/editorSizeForm.css";
 
-const EditorSizeForm = ({ editorOptions }) => {
+const EditorSizeForm = () => {
+  const { editorInfo, setEditorInfo } = useContext(globalContext);
+
   const [formData, setFormData] = useState({
-    x: editorOptions.editorTiles[0].length,
-    y: editorOptions.editorTiles.length,
-    size: 100,
+    x: editorInfo.tiles[0].length,
+    y: editorInfo.tiles.length,
+    zoom: 100,
   });
 
   const submitHandler = (e) => {
     e.preventDefault();
-    editorOptions.setEditorTiles(() => {
+    setEditorInfo(() => {
       let outline = [];
       for (let i = 0; i < formData.y; i++) {
         let row = [];
@@ -19,7 +22,7 @@ const EditorSizeForm = ({ editorOptions }) => {
         }
         outline.push(row);
       }
-      return { tiles: outline, size: formData.size };
+      return { tiles: outline, zoom: formData.zoom };
     });
   };
 
@@ -59,8 +62,8 @@ const EditorSizeForm = ({ editorOptions }) => {
           id="editor-size"
           type="number"
           min={10}
-          name="size"
-          value={formData.size}
+          name="zoom"
+          value={formData.zoom}
           onChange={(e) => changeHandler(e)}
         />
       </div>
