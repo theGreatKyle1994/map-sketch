@@ -1,12 +1,13 @@
-import Tile from "./Tile";
-import { globalContext } from "../App";
+import EditorBottomToolbar from "./EditorBottomToolbar";
+import Tile from "../Tile";
+import { globalContext } from "../../App";
 import { useContext } from "react";
-import "../assets/editor.css";
+import "../../assets/editor/editor.css";
 
 const Editor = () => {
   const { editorInfo } = useContext(globalContext);
   const { tiles } = editorInfo;
-  
+
   const mapTiles = () => {
     const outline = [];
     for (let i = 0; i < tiles.length; i++) {
@@ -25,6 +26,7 @@ const Editor = () => {
   return (
     <div id="editor-container">
       <div id="editor-tile-container">{...mapTiles()}</div>
+      <EditorBottomToolbar />
     </div>
   );
 };

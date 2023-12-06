@@ -1,5 +1,5 @@
 import HeaderToolbar from "./components/HeaderToolbar";
-import Editor from "./components/Editor";
+import Editor from "./components/editor/Editor";
 import SideToolbar from "./components/sideToolbar/SideToolbar";
 import { useState, createContext } from "react";
 import "./assets/app.css";

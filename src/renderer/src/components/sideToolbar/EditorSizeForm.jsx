@@ -8,12 +8,11 @@ const EditorSizeForm = () => {
   const [formData, setFormData] = useState({
     x: editorInfo.tiles[0].length,
     y: editorInfo.tiles.length,
-    zoom: 100,
   });
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setEditorInfo(() => {
+    setEditorInfo((prevInfo) => {
       let outline = [];
       for (let i = 0; i < formData.y; i++) {
         let row = [];
@@ -22,7 +21,7 @@ const EditorSizeForm = () => {
         }
         outline.push(row);
       }
-      return { tiles: outline, zoom: formData.zoom };
+      return { ...prevInfo, tiles: outline };
     });
   };
 
@@ -53,17 +52,6 @@ const EditorSizeForm = () => {
           min={1}
           name="y"
           value={formData.y}
-          onChange={(e) => changeHandler(e)}
-        />
-      </div>
-      <div className="sideToolbar-editor-div">
-        <label htmlFor="editor-size">Size (px): </label>
-        <input
-          id="editor-size"
-          type="number"
-          min={10}
-          name="zoom"
-          value={formData.zoom}
           onChange={(e) => changeHandler(e)}
         />
       </div>
