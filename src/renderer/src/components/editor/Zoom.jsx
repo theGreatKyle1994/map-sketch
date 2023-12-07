@@ -4,12 +4,13 @@ import "../../assets/editor/zoom.css";
 
 const Zoom = () => {
   const { editorInfo, setEditorInfo } = useContext(globalContext);
+  const { zoom } = editorInfo;
 
   const zoomChangeHandler = (e) => {
     const { value } = e.target;
     setEditorInfo((prevEditorInfo) => ({
       ...prevEditorInfo,
-      zoom: value,
+      zoom: { ...prevEditorInfo.zoom, amount: Number(value) },
     }));
   };
 
@@ -19,14 +20,14 @@ const Zoom = () => {
       <input
         id="editor-toolbar-size"
         type="range"
-        step={10}
-        min={10}
-        max={500}
+        step={zoom.step}
+        min={zoom.min}
+        max={zoom.max}
         name="zoom"
-        value={editorInfo.zoom}
+        value={zoom.amount}
         onChange={(e) => zoomChangeHandler(e)}
       />
-      <span>{(editorInfo.zoom / 100).toFixed(1)}x</span>
+      <span>{(zoom.amount / 100).toFixed(1)}x</span>
     </form>
   );
 };
