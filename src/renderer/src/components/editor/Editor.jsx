@@ -29,7 +29,7 @@ const Editor = () => {
         let zoomAmount = e.deltaY < 0 ? 30 : -30;
         zoomAmount += prevInfo.zoom.amount;
         if (zoomAmount >= 500) zoomAmount = 500;
-        if (zoomAmount <= 0) zoomAmount = 10;
+        else if (zoomAmount <= 0) zoomAmount = 10;
         return {
           ...prevInfo,
           zoom: {
