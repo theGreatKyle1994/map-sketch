@@ -1,7 +1,7 @@
 import EditorBottomToolbar from "./EditorBottomToolbar";
 import Tile from "../Tile";
 import { globalContext } from "../../App";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import "../../assets/editor/editor.css";
 
 const Editor = () => {
@@ -26,11 +26,11 @@ const Editor = () => {
   const handleScroll = (e) => {
     if (keys.Shift) {
       setEditorInfo((prevInfo) => {
-        const { speed, amount } = prevInfo.zoom;
+        const { speed, amount, min, max } = prevInfo.zoom;
         let zoomAmount = e.deltaY < 0 ? speed : -speed;
         zoomAmount += amount;
-        if (zoomAmount >= 500) zoomAmount = 500;
-        else if (zoomAmount <= 0) zoomAmount = 10;
+        if (zoomAmount >= 500) zoomAmount = max;
+        else if (zoomAmount <= 0) zoomAmount = min;
         return {
           ...prevInfo,
           zoom: {
