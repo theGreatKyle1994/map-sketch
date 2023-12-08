@@ -26,8 +26,9 @@ const Editor = () => {
   const handleScroll = (e) => {
     if (keys.Shift) {
       setEditorInfo((prevInfo) => {
-        let zoomAmount = e.deltaY < 0 ? 30 : -30;
-        zoomAmount += prevInfo.zoom.amount;
+        const { speed, amount } = prevInfo.zoom;
+        let zoomAmount = e.deltaY < 0 ? speed : -speed;
+        zoomAmount += amount;
         if (zoomAmount >= 500) zoomAmount = 500;
         else if (zoomAmount <= 0) zoomAmount = 10;
         return {

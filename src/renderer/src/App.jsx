@@ -18,6 +18,7 @@ const App = () => {
       max: 500,
       step: 10,
       amount: 100,
+      speed: 30,
     },
   });
 
