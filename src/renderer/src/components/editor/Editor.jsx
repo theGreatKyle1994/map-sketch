@@ -13,8 +13,8 @@ const Editor = () => {
     for (let i = 0; i < tiles.length; i++) {
       const row = (
         <div className="tile-row-container">
-          {tiles[i].map((_) => (
-            <Tile key={Math.random()} />
+          {tiles[i].map((_, j) => (
+            <Tile key={Math.random()} tilePos={{ x: j, y: i }} />
           ))}
         </div>
       );
@@ -27,8 +27,7 @@ const Editor = () => {
     if (keys.Shift) {
       setEditorInfo((prevInfo) => {
         const { speed, amount, min, max } = prevInfo.zoom;
-        let zoomAmount = e.deltaY < 0 ? speed : -speed;
-        zoomAmount += amount;
+        let zoomAmount = (e.deltaY < 0 ? speed : -speed) + amount;
         if (zoomAmount >= 500) zoomAmount = max;
         else if (zoomAmount <= 0) zoomAmount = min;
         return {

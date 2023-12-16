@@ -1,7 +1,7 @@
 import HeaderToolbar from "./components/HeaderToolbar";
 import Editor from "./components/editor/Editor";
 import SideToolbar from "./components/sideToolbar/SideToolbar";
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import useKeyBinds from "./hooks/useKeyBinds";
 import "./assets/app.css";
 export const globalContext = createContext({});
@@ -20,7 +20,13 @@ const App = () => {
       amount: 100,
       speed: 30,
     },
+    selectedTile: null,
   });
+
+  useEffect(
+    () => console.log(editorInfo.selectedTile),
+    [editorInfo.selectedTile],
+  );
 
   return (
     <globalContext.Provider
