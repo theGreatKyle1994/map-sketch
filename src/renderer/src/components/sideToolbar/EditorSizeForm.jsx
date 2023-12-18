@@ -13,15 +13,15 @@ const EditorSizeForm = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setEditorInfo((prevInfo) => {
-      let outline = [];
+      let newLayout = [];
       for (let i = 0; i < formData.y; i++) {
         let row = [];
         for (let j = 0; j < formData.x; j++) {
           row.push(0);
         }
-        outline.push(row);
+        newLayout.push(row);
       }
-      return { ...prevInfo, tiles: outline };
+      return { ...prevInfo, tiles: newLayout };
     });
   };
 

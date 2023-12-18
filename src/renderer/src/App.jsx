@@ -10,8 +10,8 @@ const App = () => {
   const keys = useKeyBinds();
   const [editorInfo, setEditorInfo] = useState({
     tiles: [
-      [0, 0],
-      [0, 0],
+      [{ type: undefined }, { type: "wall" }],
+      [{ type: undefined }, { type: undefined }],
     ],
     zoom: {
       min: 10,
@@ -20,7 +20,7 @@ const App = () => {
       amount: 100,
       speed: 30,
     },
-    selectedTile: null,
+    selectedTile: { x: null, y: null },
   });
 
   useEffect(

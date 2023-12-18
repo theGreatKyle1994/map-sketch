@@ -13,8 +13,11 @@ const Editor = () => {
     for (let i = 0; i < tiles.length; i++) {
       const row = (
         <div className="tile-row-container">
-          {tiles[i].map((_, j) => (
-            <Tile key={Math.random()} tilePos={{ x: j, y: i }} />
+          {tiles[i].map((tile, j) => (
+            <Tile
+              key={Math.random()}
+              tileInfo={{ ...tile, tilePos: { x: j, y: i } }}
+            />
           ))}
         </div>
       );
