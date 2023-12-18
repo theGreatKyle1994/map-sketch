@@ -9,11 +9,7 @@ export const globalContext = createContext({});
 const App = () => {
   const keys = useKeyBinds();
   const [editorInfo, setEditorInfo] = useState({
-    tiles: [
-      [{ type: undefined }, { type: undefined }, { type: undefined }],
-      [{ type: undefined }, { type: undefined }, { type: undefined }],
-      [{ type: undefined }, { type: undefined }, { type: undefined }],
-    ],
+    tiles: [[{ type: undefined }]],
     zoom: {
       min: 10,
       max: 500,
