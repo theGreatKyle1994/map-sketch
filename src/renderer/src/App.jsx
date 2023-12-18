@@ -1,7 +1,7 @@
 import HeaderToolbar from "./components/HeaderToolbar";
 import Editor from "./components/editor/Editor";
 import SideToolbar from "./components/sideToolbar/SideToolbar";
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext } from "react";
 import useKeyBinds from "./hooks/useKeyBinds";
 import "./assets/app.css";
 export const globalContext = createContext({});
@@ -10,8 +10,9 @@ const App = () => {
   const keys = useKeyBinds();
   const [editorInfo, setEditorInfo] = useState({
     tiles: [
-      [{ type: undefined }, { type: "wall" }],
-      [{ type: undefined }, { type: undefined }],
+      [{ type: undefined }, { type: undefined }, { type: undefined }],
+      [{ type: undefined }, { type: undefined }, { type: undefined }],
+      [{ type: undefined }, { type: undefined }, { type: undefined }],
     ],
     zoom: {
       min: 10,
@@ -22,11 +23,6 @@ const App = () => {
     },
     selectedTile: { x: null, y: null },
   });
-
-  useEffect(
-    () => console.log(editorInfo.selectedTile),
-    [editorInfo.selectedTile],
-  );
 
   return (
     <globalContext.Provider

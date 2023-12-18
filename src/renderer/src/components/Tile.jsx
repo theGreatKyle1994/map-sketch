@@ -12,7 +12,6 @@ const Tile = ({ tileInfo }) => {
       className="tile"
       style={{ height: `${zoomAmount}px`, minWidth: `${zoomAmount}px` }}
       onClick={() => {
-        console.log(type);
         setEditorInfo((prevInfo) => ({
           ...prevInfo,
           selectedTile: tilePos,

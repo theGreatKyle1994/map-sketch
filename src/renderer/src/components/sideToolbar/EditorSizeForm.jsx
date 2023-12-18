@@ -17,7 +17,8 @@ const EditorSizeForm = () => {
       for (let i = 0; i < formData.y; i++) {
         let row = [];
         for (let j = 0; j < formData.x; j++) {
-          row.push(0);
+          if (i < prevInfo.tiles.length) row.push(prevInfo.tiles[i][j]);
+          else row.push({ type: undefined });
         }
         newLayout.push(row);
       }
