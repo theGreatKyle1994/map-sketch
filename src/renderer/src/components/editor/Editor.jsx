@@ -8,6 +8,7 @@ const Editor = () => {
   const { editorInfo, setEditorInfo, keys } = useContext(globalContext);
   const { tiles } = editorInfo;
 
+  // Maps the general outline for the editor
   const mapTiles = () => {
     const outline = [];
     for (let i = 0; i < tiles.length; i++) {
@@ -16,6 +17,7 @@ const Editor = () => {
           {tiles[i].map((tile, j) => (
             <Tile
               key={Math.random()}
+              // Gives each tile its info and coords
               tileInfo={{ ...tile, tilePos: { x: j, y: i } }}
             />
           ))}
@@ -26,6 +28,7 @@ const Editor = () => {
     return outline;
   };
 
+  // Scroll handler for the editor based on keybinds
   const handleScroll = (e) => {
     if (keys.Shift) {
       setEditorInfo((prevInfo) => {

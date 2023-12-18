@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 
-const allowedKeys = Object.freeze({ Shift: false });
-
 const useKeyBinds = () => {
+  const allowedKeys = Object.freeze({ Shift: false });
   const [keys, setKeys] = useState(allowedKeys);
 
   const updateKeys = (key, val) => {

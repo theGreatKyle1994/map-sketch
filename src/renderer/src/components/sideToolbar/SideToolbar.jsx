@@ -1,10 +1,10 @@
 import "../../assets/sideToolbar/SideToolbar.css";
 import EditorSizeForm from "./EditorSizeForm";
 
-const SideToolbar = ({ editorOptions }) => {
+const SideToolbar = () => {
   return (
     <div id="sideToolbar-container">
-      <EditorSizeForm editorOptions={editorOptions} />
+      <EditorSizeForm />
     </div>
   );
 };

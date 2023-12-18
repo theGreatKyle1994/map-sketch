@@ -4,7 +4,6 @@ import "../../assets/sideToolbar/editorSizeForm.css";
 
 const EditorSizeForm = () => {
   const { editorInfo, setEditorInfo } = useContext(globalContext);
-
   const [formData, setFormData] = useState({
     x: editorInfo.tiles[0].length,
     y: editorInfo.tiles.length,
@@ -17,6 +16,7 @@ const EditorSizeForm = () => {
       for (let i = 0; i < formData.y; i++) {
         let row = [];
         for (let j = 0; j < formData.x; j++) {
+          // Checks if tiles exist before pushing prev tiles on resize
           if (i < prevInfo.tiles.length) row.push(prevInfo.tiles[i][j]);
           else row.push({ type: undefined });
         }

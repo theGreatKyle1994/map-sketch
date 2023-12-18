@@ -6,6 +6,7 @@ const Zoom = () => {
   const { editorInfo, setEditorInfo } = useContext(globalContext);
   const { zoom } = editorInfo;
 
+  // Sets the zoom from the manual input
   const zoomChangeHandler = (e) => {
     const { value } = e.target;
     setEditorInfo((prevEditorInfo) => ({
