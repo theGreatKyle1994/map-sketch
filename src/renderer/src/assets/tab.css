@@ -1,0 +1,21 @@
+.tab {
+  background-color: white;
+  width: fit-content;
+  padding: 5px;
+  border: 1px solid black;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: grey;
+  color: white;
+}
+
+.tab:hover {
+  transform: scale(1.05);
+}
+
+.tab:active {
+  transform: scale(0.98);
+}
