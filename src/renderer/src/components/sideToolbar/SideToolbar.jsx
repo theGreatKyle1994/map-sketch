@@ -5,6 +5,9 @@ import { useState } from "react";
 
 const SideToolbar = () => {
   const [currentTab, setCurrentTab] = useState("editor");
+  const renderTabContents = {
+    editor: <EditorSizeForm />,
+  };
 
   return (
     <div id="sideToolbar-container">
@@ -20,7 +23,7 @@ const SideToolbar = () => {
           state={{ setter: setCurrentTab, current: currentTab }}
         />
       </div>
-      {currentTab === "editor" && <EditorSizeForm />}
+      {renderTabContents[currentTab]}
     </div>
   );
 };
