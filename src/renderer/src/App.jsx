@@ -6,6 +6,9 @@ import useKeyBinds from "./hooks/useKeyBinds";
 import "./assets/app.css";
 export const globalContext = createContext({});
 
+const { require } = window.api;
+console.log(require("fs"));
+
 const App = () => {
   const keys = useKeyBinds();
   const [editorInfo, setEditorInfo] = useState({
